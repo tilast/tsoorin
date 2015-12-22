@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Курс Ruby on Rails - Урок 1</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/github.css">
+  <script src="../assets/js/jquery-2.1.4.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/highlight.pack.js"></script>
+  <script src="../assets/js/highlight.js"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="../index.html" class="navbar-brand">Курс Ruby on Rails</a>
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav nav">
+          <li class="active"><a href="theory1.html">Урок 1</a></li>
+					<li><a href="theory2.html">Урок 2</a></li>
+					<li><a href="theory3.html">Урок 3</a></li>
+          <li><a href="tests.html">Тести</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="alert alert-info" role="alert">
+  <h3>Теоретичні відомості</h3>
+  <strong>Увага!</strong>
+  Цей матеріал вимагає базових знань мови програмування Ruby. Якщо ви ще не знайомі з нею, рекомендую ознайомитись на сайті <a href="http://tryruby.org" target="_blank">tryruby.org</a>.
+</div>
+
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Цей
+посібник покаже вам, як створити базовий
+блог за допомогою Ruby On Rails. Охоплення
+основних аспектів розробки веб-додатків
+на Rails дозволить легше та швидше зрозуміти
+концепції, які лежать в його основі, і
+як вони поєднуються одна з одною.</FONT></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<IMG SRC="i_9cf2747efdcad386_html_b90c729.jpg" NAME="Picture 10" ALIGN=BOTTOM WIDTH=550 HEIGHT=413 BORDER=0></P>
+<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.26in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Перша
+частина цієї - початок роботи з Ruby On
+Rails: встановлення</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.26in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Короткий
+оглад Ruby on Rails</B></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Ruby
+on Rails -  це фреймворк на мові Ruby, який
+використовується для швидкої розробки
+веб додатків. Він дозволяє програмісту
+зосередитись на вирішенні бізнес проблем
+замовника замість витрачати багато
+часу на розгортування/налаштування
+інфраструктури для підтримки додатку</FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Перша
+за все, жоден розробнки не хоче будувати
+рівні маніпуляції даним щоразу починаючи
+новий проект чи регулярно реалізовувати
+повну архітектуру MVC с нуля . Це основна
+перевага фреймворів – вони дають нам
+точку входу, з якої ми можемо починати
+розробляти власне додаток. Це дозволяє
+нам зконцентруватись на вимогах клієнта,
+а не на задачах, які потрібні виконати
+до виконанні реальних задач.</FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Кілька
+слів про MVC</B></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Варто
+згадати кілька слів про MVC
+(Model-View-Controller), тому що саме використання
+цього підходу може відштовхувати людей
+від використання фреймворків типу
+Rails. MVC відносно серйозна тему в
+програмуванні, однак ми не будемо
+розглядати, як реалізувати цей паттерн,
+а лише як це застосовувати. Маючи це на
+увазі, давайте подивимося, що означає
+кожна з букв в абревіатурі MVC і за що
+вони відповідають в процесі розробки.</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.23in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><I><B>M</B></I></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>odel</B></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Рівень
+моделі – це рівень, де ви визначаєте
+класи для даних, що буде буде використовувати
+ваш додаток. Наприклад, якщо ви хочете
+зберегти повідомлення на блозі, ви
+будете мати модель &quot;Post&quot;. Модель має
+можливість взаємодіяти з базою даних,
+для отримування і зберігання даних. Ця
+функціональність досягається шляхом
+успадкування його від суперкласу
+ActiveRecord. Будь-які методи, які діють на
+цих даних, повинні також бути розміщені
+в моделі.</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.23in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><I><B>V</B></I></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>iew</B></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Рівень
+відображення має одну головну мету -
+повернути відповідний HTML, який
+віддаватиметься користувачеві у браузер.
+У Rails View зберігаються в ERB файлах, що
+містять як HTML, так і вкладені Ruby
+конструкції.</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.23in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><I><B>C</B></I></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>ontroller</B></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Але
+нічого не станеться без контролера.
+Контролер взаємодіє з моделлю, щоб
+вибирати та зберігати дані. Він буде
+передавати будь-які дані, отримані від
+моделі, у відображення. View повертає
+отриманий HTML до контролера і контролер
+посилає це назад користувачам браузера.</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.23in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Підсумок
+MVC</B></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Це
+досить короткий огляд MVC. Я настійливо
+рекомендую вам прочитати статті на цю
+тему, так як вона ключовою в розумінні
+Rails. </FONT></FONT></FONT>
+</P>
+
+<script src="/vendor/scripts/highlight.js"></script>
+
+  </div>
+
+  <footer class="text-center">
+    <p>&copy; Круш Ігор ДА-21 ІПСА СП 2015</p>
+  </footer>
+
+
+</body>
+</html>

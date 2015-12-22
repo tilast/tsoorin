@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<title>Курс Ruby on Rails - Урок 2</title>
+	<link rel="stylesheet" href="../assets/css/styles.css">
+	<link rel="stylesheet" href="../assets/css/github.css">
+	<script src="../assets/js/jquery-2.1.4.min.js"></script>
+	<script src="../assets/js/bootstrap.min.js"></script>
+	<script src="../assets/js/highlight.pack.js"></script>
+	<script src="../assets/js/highlight.js"></script>
+</head>
+<body>
+
+	<nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="../index.html" class="navbar-brand">Курс Ruby on Rails</a>
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav nav">
+          <li><a href="theory1.html">Урок 1</a></li>
+					<li class="active"><a href="theory2.html">Урок 2</a></li>
+					<li><a href="theory3.html">Урок 3</a></li>
+          <li><a href="tests.html">Тести</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="container">
+<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.26in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Створення
+нового Rails проекту для блогу</B></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Перш
+ніж ви зможете зробити що-небудь, що вам
+потрібно створити новий проект. У Rails
+проект являє собою структуру папок, яка
+використовується для зберігання всіх
+файлів, які мають відношення до вашого
+веб-додатку. Щоб створити проект, потрібно
+ввести наступну команду в командному
+рядку:</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000"><FONT FACE="Courier, serif">&gt; rails new myblog
+-d mysql</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Зауважте,
+що в цьому випадку ми використовуємо
+MySQL як СУБД. Ця команда створить папку
+з ім'ям MyBlog, який містить всі відповідні
+папки проекту.</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.26in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Важливі
+файли та папки</B></FONT></FONT></FONT></P>
+<TABLE WIDTH=733 CELLPADDING=10 CELLSPACING=0 BGCOLOR="#ffffff">
+	<COL WIDTH=159>
+	<COL WIDTH=532>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TD WIDTH=159 BGCOLOR="#ffffff" STYLE="border-top: 1px solid #cccccc; border-bottom: none; border-left: 1px solid #cccccc; border-right: none; padding-top: 0.1in; padding-bottom: 0in; padding-left: 0.1in; padding-right: 0in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Файл/папка</B></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=532 BGCOLOR="#ffffff" STYLE="border-top: 1px solid #cccccc; border-bottom: none; border-left: none; border-right: 1px solid #cccccc; padding-top: 0.1in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.1in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Призначення</B></FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR VALIGN=TOP>
+			<TD WIDTH=159 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: 1px solid #cccccc; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.1in; padding-right: 0in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">config\database.yml</FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=532 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: none; border-right: 1px solid #cccccc; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.1in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Це
+				YAML файл (аббревіатура – Yet Another Markup
+				Language – ще одна мова розмітки). Він
+				містить в собі конфігурацію підключення
+				до вашої бази даних.</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=159 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: 1px solid #cccccc; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.1in; padding-right: 0in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">config\routes.rb</FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=532 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: none; border-right: 1px solid #cccccc; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.1in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Ruby-файл
+				дозволяє вказати які контролери
+				будуть обробляти шляхи до сторінок
+				сайту. </FONT></FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=159 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: 1px solid #cccccc; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.1in; padding-right: 0in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">app\controllers\</FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=532 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: none; border-right: 1px solid #cccccc; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.1in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Папка,
+				що містить в собі файли контроллерів.
+				Контроллери – рубі файли.</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=159 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: 1px solid #cccccc; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.1in; padding-right: 0in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">app\helpers\</FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=532 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: none; border-right: 1px solid #cccccc; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.1in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Папка,
+				що містить файли хелперів. Хелпери –
+				це рубі файли, що містять функції для
+				реалізації логіки відображень і не
+				містять в собі бізнес логіки додатку.</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=159 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: 1px solid #cccccc; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.1in; padding-right: 0in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">app\models\</FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=532 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: none; border-right: 1px solid #cccccc; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.1in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Папка,
+				що містить файли моделей. Файли моделей
+				– рубі файли. Вони успадковують
+				більшість функціональності від
+				базового класу ActivReacord, але ви можете
+				розширити їх своїми власними методами.</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=159 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: 1px solid #cccccc; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.1in; padding-right: 0in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">app\views\</FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=532 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: none; border-right: 1px solid #cccccc; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.1in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Містить
+				в собі підкаталоги для кожного
+				контроллеру, що описаний в додатку.
+				Наприклад, якщо контроллер називається
+				</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>posts_controller.rb</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">,
+				тоді матимемо підкаталог з назвою
+				posts.</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=159 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: 1px solid #cccccc; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.1in; padding-right: 0in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">public\images\</FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=532 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: none; border-right: 1px solid #cccccc; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.1in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Містить
+				в собі всі зображення вашого веб
+				додатку.</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=159 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: 1px solid #cccccc; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.1in; padding-right: 0in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">public\javascripts\</FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=532 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: none; border-right: 1px solid #cccccc; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.1in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Містить
+				в собі всі JS-файли, які потрібні у
+				вашому додатку.</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=159 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: 1px solid #cccccc; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.1in; padding-right: 0in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">public\stylesheets\</FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=532 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: none; border-right: 1px solid #cccccc; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.1in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Містить
+				в собі всі файли стилів CSS, які потрібні
+				у вашому додатку</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=159 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #cccccc; border-left: 1px solid #cccccc; border-right: none; padding-top: 0in; padding-bottom: 0.1in; padding-left: 0.1in; padding-right: 0in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">db\migrate</FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=532 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #cccccc; border-left: none; border-right: 1px solid #cccccc; padding-top: 0in; padding-bottom: 0.1in; padding-left: 0in; padding-right: 0.1in">
+				<P><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Містить
+				в собі файли міграцій, що використовуються
+				для відбудови структури бази даних.</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.26in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Проектування
+додатку</B></FONT></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<IMG SRC="i_9cf2747efdcad386_html_578c266e.jpg" NAME="Picture 9" ALIGN=BOTTOM WIDTH=400 HEIGHT=300 BORDER=0></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">В
+процесі розробки Rails додатку ви маєте
+думати про те, як складові структури
+даних будуть взаємодіяти одна з одною.
+Є різні рівні проектування, які ви можете
+виконати, однак для збереження простоти,
+ви можете робити це просто.</FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Отож,
+ми розробляємо веб-додаток блог – з
+чого слід почати? Спершу, візьміть ручку
+та аркуш паперу і напигіть маленький
+текст про те, що таке ваш додаток та що
+він має робити. Після завершення,
+підкресліть </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><U>іменники</U></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">,
+що мають зберігатись як інформація в
+базі даних. Для нашого простого
+додатку-блогу буде достатньо одного
+речення:</FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><I>Мій
+додаток – блог. Він дозволить мені
+писати пости і дозволятиме людям
+коментувати їх.</I></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Таким
+чином, нам потрібні моделі для записів,
+людей (або користувачів) і коментарів.
+Знову ж таки, в спробі зберегти речі
+простими, ми можемо забути про людей /
+користувачів. Так що ми повинні мати
+модель для лише для постів і коментарів.</FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Далі,
+вам потрібно буде думати про те, як
+моделі повинні взаємодіяти одна з одною.
+Види відношень в Rails наступні:</FONT></FONT></FONT></P>
+<UL>
+	<LI><P STYLE="margin-top: 0.19in; margin-bottom: 0.16in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">One-to-One
+	– один до одного</FONT></FONT></FONT></P>
+	<LI><P STYLE="margin-top: 0.19in; margin-bottom: 0.16in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">One-to-Many
+	– один до багатьох</FONT></FONT></FONT></P>
+	<LI><P STYLE="margin-top: 0.19in; margin-bottom: 0.16in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Many-to-Many
+	– багато до багатьох</FONT></FONT></FONT></P>
+</UL>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Ви
+повинні запитати себе, які відносини є
+між даними моделям. Щодо записів та
+коментарів – один пост може мати багато
+коментарів і кожен коментар може мати
+лише один запис. Логічно припустити, що
+це буде відношення Один до Багатьох.
+Детальніше розглянемо відношення
+пізніше.</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.26in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Скафолдинг
+– швидка генерація</B></FONT></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<IMG SRC="i_9cf2747efdcad386_html_620cd30a.jpg" NAME="Picture 8" ALIGN=BOTTOM WIDTH=425 HEIGHT=282 BORDER=0></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Scaffolding
+може бути використаний для швидкого
+створення/прототипування для вашого
+клієнту. Також скафолдинг може бути
+корисним для вивчення Rails. Однією простою
+командою ви можете створити модель,
+контроллер і кілька відображень.</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.23in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Створення
+постів за допомогою скафолдингу</B></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Для
+створення відповідних скафолд файлів
+для записів, ви можете використати
+команду:</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000">  <FONT FACE="Courier, serif">&gt; ruby
+script/generate scaffold post title:string body:text</FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Ця
+команда створює багато файлів. Вона
+створює контролер для записів під назвою
+</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>posts_controller.rb</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">
+і модель під назвою </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>post.rb</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">
+(зверніть увагу, не у множині). Він також
+створює підпапку в папці відоражень
+під назвою </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>posts</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">.
+Вона містить чотири файли, </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>index.html.erb</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">,
+</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>edit.html.erb</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">,
+</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>show.html.erb</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">,
+</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>new.html.erb</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">.
+Ви також можете помітити, що ми вказали
+необхідні поля, тобто </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>title</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">
+і </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>body</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">
+з типами </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>string</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">
+і </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>text</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">
+відповідно.</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.23in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Створення
+коментарів за допомогою скафолдингу</B></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Схожим
+чином створюються відповідні скафолд
+файли для коментарів:</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000">  <FONT FACE="Courier, serif">&gt; ruby
+script/generate scaffold comment name:string body:text
+post:references</FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">В
+кінці команди ви можете помітити запис
+</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>post:references</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">.
+Це використовується дя того, щоб створити
+зовнішній ключ на первинний ключ таблиці
+</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>posts</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">.</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.26in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Звʼязування
+моделей Post і Comment</B></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Зараз
+ми маємо дві моделі, які слід повʼязати
+відношенням. Для цього ми маємо додати
+наступну строку коду в </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>models/post.rb
+</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">і
+</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>models/comment.rb
+</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">відповідно:</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.23in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>post.rb</B></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000"><FONT FACE="Courier, serif">class Post &lt;
+ActiveRecord::Base</FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000">  </FONT><FONT COLOR="#000000"><FONT FACE="Courier, serif"><I>has_many
+:comments</I></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000"><FONT FACE="Courier, serif">end</FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.23in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>comment.rb</B></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000"><FONT FACE="Courier, serif">class Comment &lt;
+ActiveRecord::Base</FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000">  </FONT><FONT COLOR="#000000"><FONT FACE="Courier, serif"><I>belongs_to
+:post</I></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000"><FONT FACE="Courier, serif">end</FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Це
+полегшує пошук асоціацій до записів.
+Далі поглянемо, яким чином відображати
+коментарі до відповідного запису.</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.26in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Як
+створити базу даних та таблиці</B></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Ми
+маємо створені моделі </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Post</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">
+і </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Comment</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">,
+тож далі ми маємо створити базу даних,
+де вони будуть зберігатись.</FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Для
+того, щоб створити базу даних ми маємо
+додати логін і пароль до неї в </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>database.yml</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">
+файл так, як показано нижче</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000"><FONT FACE="Courier, serif">development:</FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000">  <FONT FACE="Courier, serif">adapter: mysql</FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000">  <FONT FACE="Courier, serif">encoding: utf8</FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000">  <FONT FACE="Courier, serif">reconnect: false</FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000">  <FONT FACE="Courier, serif">database:
+myblog_development</FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000">  <FONT FACE="Courier, serif">pool: 5</FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000">  <FONT FACE="Courier, serif">username: </FONT></FONT><FONT COLOR="#000000"><FONT FACE="Courier, serif"><I>root</I></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000">  <FONT FACE="Courier, serif">password:
+</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Courier, serif"><I>yourrootpassword</I></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000">  <FONT FACE="Courier, serif">host: localhost</FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Після
+змін у файлі </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>database.yml
+</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">з
+деталями доступу до бази даних, ми маємо
+запустити наступні команди </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>rake
+</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">з
+командного рядка. Зробити це треба в
+папці проекту:</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000"><FONT FACE="Courier, serif">&gt; cd myblog</FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000">  <FONT FACE="Courier, serif">&gt; rake
+db:create</FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Базу
+даних було створено.</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.23in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Database
+Migration</B></FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Міграції
+в Rails – це процес переходу структури
+бази даних з одного стану в інший.
+Прикладами таких процесів є:</FONT></FONT></FONT></P>
+<UL>
+	<LI><P STYLE="margin-top: 0.19in; margin-bottom: 0.16in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Створення
+	таблиць</FONT></FONT></FONT></P>
+	<LI><P STYLE="margin-top: 0.19in; margin-bottom: 0.16in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Видалення
+	таблиць</FONT></FONT></FONT></P>
+	<LI><P STYLE="margin-top: 0.19in; margin-bottom: 0.16in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Додавання
+	нових полів</FONT></FONT></FONT></P>
+	<LI><P STYLE="margin-top: 0.19in; margin-bottom: 0.16in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Видалення
+	полів</FONT></FONT></FONT></P>
+</UL>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Коли
+ви створили дві моделі для постів і
+коментарів з використанням скафолду,
+декілька файлів були створені автоматично.
+Зокрема, файли міграцій були створені
+в </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>db\migrate</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">
+папці. Ці файли використовуються для
+створення таблиць для повідомлень і
+коментарів моделей. Для побудови таблиць
+за допомогою міграційних файлів Вам
+необхідно виконати наступну команду:</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+<FONT COLOR="#000000"><FONT FACE="Courier, serif">&gt; rake
+db:migrate</FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Таблиці
+</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>posts</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">
+and </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>comments</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">
+були створені.</FONT></FONT></FONT></P>
+</div>
+
+  <footer class="text-center">
+    <p>&copy; Круш Ігор ДА-21 ІПСА СП 2015</p>
+  </footer>
+
+
+</body>
+</html>

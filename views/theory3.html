@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<title>Курс Ruby on Rails - Урок 2</title>
+	<link rel="stylesheet" href="../assets/css/styles.css">
+	<link rel="stylesheet" href="../assets/css/github.css">
+	<script src="../assets/js/jquery-2.1.4.min.js"></script>
+	<script src="../assets/js/bootstrap.min.js"></script>
+	<script src="../assets/js/highlight.pack.js"></script>
+	<script src="../assets/js/highlight.js"></script>
+</head>
+<body>
+
+	<nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="../index.html" class="navbar-brand">Курс Ruby on Rails</a>
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav nav">
+					<li><a href="theory1.html">Урок 1</a></li>
+					<li><a href="theory2.html">Урок 2</a></li>
+					<li class="active"><a href="theory3.html">Урок 3</a></li>
+          <li><a href="tests.html">Тести</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="container">
+	<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.26in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Перший
+	запуск</B></FONT></FONT></FONT></P>
+	<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Далі
+	запустимо Webrick - вбудований в Rails веб
+	сервер, і подивимось, як все виглядає.
+	Пишемо команду</FONT></FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">&gt; rails s</FONT></FONT></P>
+	<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Переходимо
+	на http://localhost:3000/posts у вашому улюбленому
+	браузері і побачимо наступну сторінку.
+	За замовчуванням цей шлях передасть
+	контроль над запитом в </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>index
+	</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">метод
+	кoнтроллеру </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>posts_controller.rb</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">,
+	 який відрендерить </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>index.html.erb</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">
+	відображення.</FONT></FONT></FONT></P>
+	<P ALIGN=CENTER STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<IMG SRC="i_9cf2747efdcad386_html_208dbeeb.jpg" NAME="Picture 7" ALIGN=BOTTOM WIDTH=550 HEIGHT=390 BORDER=0></P>
+	<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Коли
+	ми клікаємо на посилання </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>New
+	Post</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">,
+	ми перейдемо на сторінку
+	</FONT></FONT></FONT><A HREF="http://localhost:3000/posts/new"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>http://localhost:3000/posts/new</B></FONT></FONT></A><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">,
+	де ми побачимо форму для створення
+	нового поста. Перехід на цей шлях
+	обробляється методом </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>new
+	</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">в
+	</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>posts_controller.rb</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">,
+	який відрендерить </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>new.html.erb
+	</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">відображення.</FONT></FONT></FONT></P>
+	<P ALIGN=CENTER STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<IMG SRC="i_9cf2747efdcad386_html_1a5f2334.jpg" NAME="Picture 6" ALIGN=BOTTOM WIDTH=550 HEIGHT=390 BORDER=0></P>
+	<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Натискаємо
+	кнопку </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Create
+	</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">для
+	того, щоб зберегти запис, нас перенаправить
+	на сторінку </FONT></FONT></FONT><A HREF="http://localhost:3000/posts/show/1"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>http://localhost:3000/posts/show/1</B></FONT></FONT></A><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">.
+	На ній ми побачимо інформацію про запис.
+	Цей запит викликає </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>show
+	</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">метод
+	в </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>posts_controller.rb.
+	</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Він
+	також приймає параметр </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>1
+	</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">в
+	метод </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>show.
+	</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">В
+	кінці цей метод рендерить відображення
+	</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>show.html.erb</B></FONT></FONT></FONT></P>
+	<P ALIGN=CENTER STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<IMG SRC="i_9cf2747efdcad386_html_20a7135b.jpg" NAME="Picture 5" ALIGN=BOTTOM WIDTH=550 HEIGHT=390 BORDER=0></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.26in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Налаштування
+	домашньої сторінки</B></FONT></FONT></FONT></P>
+	<P ALIGN=CENTER STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<IMG SRC="i_9cf2747efdcad386_html_a13823dd.jpg" NAME="Picture 4" ALIGN=BOTTOM WIDTH=400 HEIGHT=300 BORDER=0></P>
+	<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Ви,
+	ймовірно, хочете, щоб кореневий URL
+	(http://localhost:3000) направляла користувача
+	на головну сторінку ваших записів,
+	фактично роблячи це вашою домашньою
+	сторінкою. Для цього спочатку потрібно
+	видалити public/index.html файл.</FONT></FONT></FONT></P>
+	<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Друге,
+	що ви повинні зробити, це створити роут
+	в конфігураційному файлі </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>routes.rb</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">.
+	Відкрийте цей файл у блокноті (або у
+	вашому улюбленому редакторі) і додайте
+	новий рядок в кінці, використовуючи
+	map.root, як показано нижче.</FONT></FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000"><FONT FACE="Courier, serif">ActionController::Routing::Routes.draw
+	do |map|</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">map.resources
+	:comments</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">map.resources
+	:posts</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">map.connect
+	':controller/:action/:id'</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">map.connect
+	':controller/:action/:id.:format'</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  </FONT><FONT COLOR="#000000"><FONT FACE="Courier, serif"><I>map.root
+	:controller =&gt; &quot;post&quot;</I></FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000"><FONT FACE="Courier, serif">end</FONT></FONT></P>
+	<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><I>Заваження:
+	</I></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Цей
+	файл роутів має очищений від коментарів
+	для ясності і стислості. Більш детальну
+	інформацію про роути спробуйте знайти
+	в документації по API Rails.</FONT></FONT></FONT></P>
+	<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"> </FONT>
+	</P>
+	<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.26in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Дозволяємо
+	користувачам залишати коментарі</B></FONT></FONT></FONT></P>
+	<P ALIGN=CENTER STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<IMG SRC="i_9cf2747efdcad386_html_d72b9cb4.jpg" NAME="Picture 3" ALIGN=BOTTOM WIDTH=365 HEIGHT=274 BORDER=0></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.23in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Змінимо
+	роути</B></FONT></FONT></FONT></P>
+	<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Перед
+	тим, як робити будь-які зміни в файл
+	відображення, нам потрібно створити
+	скоуп </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>comments
+	</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">в
+	роуті </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>posts.</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">
+	Для цього слід модифікувати файл route.rb
+	наступним чином.</FONT></FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000"><FONT FACE="Courier, serif">ActionController::Routing::Routes.draw
+	do |map|</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  </FONT><FONT COLOR="#000000"><FONT FACE="Courier, serif"><I>map.resources
+	:posts, :has_many =&gt; :comments</I></FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">map.connect
+	':controller/:action/:id'</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">map.connect
+	':controller/:action/:id.:format'</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">map.root
+	:controller =&gt; &quot;post&quot;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000"><FONT FACE="Courier, serif">end</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.23in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Змінимо
+	відображення</B></FONT></FONT></FONT></P>
+	<P STYLE="margin-bottom: 0in"><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Тепер
+	змінимо </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>views/posts/show.html.erb</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">
+	на код, вказаний нижче. Тут ми рендеримо
+	пост і показуємо будь-які коментарі до
+	нього та відображаємо форму додавання
+	нового коментаря.</FONT></FONT></FONT></P>
+	<P STYLE="margin-bottom: 0in"><BR>
+	</P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000"><FONT FACE="Courier, serif">&lt;p&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">&lt;b&gt;Title:&lt;/b&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">&lt;%=h
+	@post.title %&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000"><FONT FACE="Courier, serif">&lt;/p&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000"><FONT FACE="Courier, serif">&lt;p&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">&lt;b&gt;Body:&lt;/b&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">&lt;%=h
+	@post.body %&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000"><FONT FACE="Courier, serif">&lt;/p&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000"><FONT FACE="Courier, serif">&lt;h2&gt;Comments&lt;/h2&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000"><FONT FACE="Courier, serif">&lt;%
+	@post.comments.each do |c| %&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">&lt;p&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">    <FONT FACE="Courier, serif">&lt;b&gt;&lt;%=h
+	c.name %&gt; said:&lt;/b&gt;&lt;br /&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">    <FONT FACE="Courier, serif">&lt;%=
+	time_ago_in_words(c.created_at) %&gt; ago</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">&lt;/p&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">&lt;p&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">    <FONT FACE="Courier, serif">&lt;%=h c.body
+	%&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">&lt;/p&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000"><FONT FACE="Courier, serif">&lt;% end %&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000"><FONT FACE="Courier, serif">&lt;% form_for
+	[@post, Comment.new] do |f| %&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">&lt;p&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">    <FONT FACE="Courier, serif">&lt;%= f.label
+	:name, &quot;Author&quot; %&gt;&lt;br /&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">    <FONT FACE="Courier, serif">&lt;%=
+	f.text_field :name %&gt;&lt;br /&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">    <FONT FACE="Courier, serif">&lt;%= f.label
+	:body, &quot;Comment Description&quot; %&gt;&lt;br /&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">    <FONT FACE="Courier, serif">&lt;%=
+	f.text_area :body %&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">&lt;/p&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">&lt;p&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">    <FONT FACE="Courier, serif">&lt;%= f.submit
+	&quot;Add Comment&quot; %&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">&lt;/p&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000"><FONT FACE="Courier, serif">&lt;% end %&gt;</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.23in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Модифікуємо
+	контроллер коментарів</B></FONT></FONT></FONT></P>
+	<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Видалимо
+	всі методи, які були створені автоматично
+	у файлі </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>comments_controller.rb</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">,
+	так як вони не потрібні для нашого
+	веб-додатку. Додамо один новий метод
+	</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>create</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">,
+	як показано в коді нижче. Він просто
+	створює обʼєкт коментаря, який належить
+	даному посту, та зберігає його у таблицю
+	</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>comments</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">.</FONT></FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000"><FONT FACE="Courier, serif">class
+	CommentsController &lt; ApplicationController</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">def create</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">    <FONT FACE="Courier, serif">@post =
+	Post.find(params[:post_id])</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">    <FONT FACE="Courier, serif">@comment =
+	@post.comments.create!(params[:comment])</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">    <FONT FACE="Courier, serif">redirect_to
+	@post</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000">  <FONT FACE="Courier, serif">end</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ebebeb; border-top: 1px solid #d7d7d7; border-bottom: 1px solid #d7d7d7; border-left: none; border-right: none; padding: 0.21in 0in; line-height: 0.29in">
+	<FONT COLOR="#000000"><FONT FACE="Courier, serif">end</FONT></FONT></P>
+	<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Перезавантаже
+	браузер(впевніться, що ваш сервер досі
+	працює в командному рядку). Ви побачите
+	щось схоже на це.</FONT></FONT></FONT></P>
+	<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<IMG SRC="i_9cf2747efdcad386_html_d50db311.jpg" NAME="Picture 2" ALIGN=BOTTOM WIDTH=550 HEIGHT=487 BORDER=0></P>
+	<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Зараз
+	ви можете спробувати додати комента.
+	Введіть текст коментаря та клікніть на
+	копку </FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Add
+	Comment</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">.
+	Новий коментар має зʼявитись під постом
+	як на малюнку нижче.</FONT></FONT></FONT></P>
+	<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<IMG SRC="i_9cf2747efdcad386_html_b7582407.jpg" NAME="Picture 1" ALIGN=BOTTOM WIDTH=550 HEIGHT=509 BORDER=0></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.26in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Висновки</B></FONT></FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.23in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Що
+	ми вивчили</B></FONT></FONT></FONT></P>
+	<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Ми
+	вивчили основні концепції, що лежать в
+	основі розробки додатків і застосували
+	наші навички в робочому веб-додатку на
+	Rails. Мати, принаймні, базове розуміння
+	дизайну додатків важливе при вивченні
+	Rails –це ключ до успіху.</FONT></FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.23in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Як
+	ми можемо вдосконалити блог</B></FONT></FONT></FONT></P>
+	<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">В
+	цьому уроці було покрито достатньо для
+	відправки повідомлень. Є багато речей,
+	які ви могли б зробити, щоб поліпшити
+	стан речей. Додайте CSS або використовуйте
+	AJAX для того, щоб змусити все працювати
+	гарніше, і це лише кілька пропозицій.</FONT></FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.21in; background: #ffffff; line-height: 0.23in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Що
+	далі</B></FONT></FONT></FONT></P>
+	<P STYLE="margin-top: 0.19in; margin-bottom: 0.21in; background: #ffffff; line-height: 0.27in">
+	<FONT COLOR="#000000"><FONT FACE="Helvetica, serif"><FONT SIZE=4 STYLE="font-size: 13pt">Далі
+	спробуйте розібратись с MVC так, щоб ви
+	дійно розуміли концепції, що за ним
+	лежать. Спробуйте зрозуміти переваги
+	Rails і MVC – це вмотивую вас вчити фреймворк
+	далі. Однак читання теорії без практики
+	не є достатнім, і ви маєте вдосталь
+	погратись з фреймворком. </FONT></FONT></FONT>
+	</P>
+</div>
+
+  <footer class="text-center">
+    <p>&copy; Круш Ігор ДА-21 ІПСА СП 2015</p>
+  </footer>
+
+
+</body>
+</html>
